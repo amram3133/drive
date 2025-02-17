@@ -1,0 +1,26 @@
+name: Run YouTube Downloader & Upload to Google Drive
+
+on:
+  schedule:
+    - cron: "0 8 * * *"  # מריץ כל יום ב-08:00 בבוקר
+  workflow_dispatch:  # מאפשר הרצה ידנית מ-GitHub
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install yt-dlp google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
+      - name: Run script and upload to Google Drive
+        env:
+          GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
+        run: python script.py
