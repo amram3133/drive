@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 # קישור הסרטון להורדה (ניתן להחליף ברשימת פלייליסט)
-URL = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+URL = "https://www.youtube.com/watch?v=M4WoInayaqU"
 
 # תיקייה מקומית להורדה
 OUTPUT_FOLDER = "downloads"
