@@ -2,7 +2,6 @@ name: Run YouTube Downloader & Upload to Google Drive
 
 on:
   schedule:
-    - cron: "0 8 * * *"  # מריץ כל יום ב-08:00 בבוקר
   workflow_dispatch:  # מאפשר הרצה ידנית מ-GitHub
 
 jobs:
